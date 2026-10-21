@@ -1,0 +1,16 @@
+{
+    "display_name": "DeepSeek Thinking Prefill",
+    "loading_order": 100,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "style.css",
+    "author": "cmljagfyzhd1",
+    "version": "1.0.0",
+    "minimum_client_version": "1.18.0",
+    "homePage": "https://github.com/cmljagfyzhd1/SillyTavern-DeepSeek-Thinking-Prefill",
+    "auto_update": true,
+    "hooks": {
+        "activate": "init"
+    }
+}

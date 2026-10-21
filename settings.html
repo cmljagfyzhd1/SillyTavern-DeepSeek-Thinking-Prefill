@@ -1,0 +1,31 @@
+<div id="deepseek-thinking-prefill-settings" class="deepseek-thinking-prefill extension_container">
+    <div class="inline-drawer">
+        <div class="inline-drawer-toggle inline-drawer-header">
+            <b>DeepSeek Thinking Prefill</b>
+            <div class="inline-drawer-icon fa-solid fa-circle-chevron-down down"></div>
+        </div>
+        <div class="inline-drawer-content">
+            <label class="checkbox_label" for="deepseek-thinking-prefill-enabled">
+                <input id="deepseek-thinking-prefill-enabled" type="checkbox">
+                <span>啟用原生 Thinking Prefill</span>
+            </label>
+
+            <label for="deepseek-thinking-prefill-text">Thinking 預填內容</label>
+            <textarea
+                id="deepseek-thinking-prefill-text"
+                class="text_pole textarea_compact"
+                rows="7"
+                maxlength="16000"
+                placeholder="輸入要放入模型思考開頭的內容"></textarea>
+            <div class="deepseek-thinking-prefill-meta">
+                <small>內容會在每次符合條件的請求送出前套用。</small>
+                <small id="deepseek-thinking-prefill-count">0 / 16,000</small>
+            </div>
+
+            <div class="deepseek-thinking-prefill-note">
+                僅會套用至官方 DeepSeek 的 deepseek-flash 與相容舊名稱 deepseek-v4-flash。反向代理、其他模型及工具呼叫會保持原樣。
+            </div>
+            <div id="deepseek-thinking-prefill-status" class="deepseek-thinking-prefill-status" aria-live="polite"></div>
+        </div>
+    </div>
+</div>

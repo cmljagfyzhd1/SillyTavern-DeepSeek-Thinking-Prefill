@@ -1,0 +1,39 @@
+.deepseek-thinking-prefill .inline-drawer-content {
+    gap: 0.75rem;
+}
+
+.deepseek-thinking-prefill textarea {
+    box-sizing: border-box;
+    min-height: 0;
+    resize: vertical;
+    width: 100%;
+}
+
+.deepseek-thinking-prefill-meta {
+    align-items: center;
+    color: var(--SmartThemeBodyColor);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.75;
+}
+
+.deepseek-thinking-prefill-note,
+.deepseek-thinking-prefill-status {
+    border: 1px solid color-mix(in srgb, var(--SmartThemeBodyColor) 28%, transparent);
+    border-radius: 0.5rem;
+    line-height: 1.45;
+    padding: 0.75rem;
+}
+
+.deepseek-thinking-prefill-note {
+    opacity: 0.8;
+}
+
+.deepseek-thinking-prefill-status[data-state="ready"] {
+    background: color-mix(in srgb, var(--SmartThemeBodyColor) 10%, transparent);
+    border-color: color-mix(in srgb, var(--SmartThemeBodyColor) 55%, transparent);
+}
+
+.deepseek-thinking-prefill-status[data-state="warning"] {
+    border-style: dashed;
+}
