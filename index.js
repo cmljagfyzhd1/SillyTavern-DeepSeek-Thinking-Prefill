@@ -19,13 +19,32 @@ import {
 } from './prefill-core.js';
 
 const MODULE_NAME = 'deepseekThinkingPrefill';
-const MODULE_PATH = 'third-party/deepseek-thinking-prefill';
 const DEFAULT_SETTINGS = Object.freeze({
     enabled: true,
     thinkingPrefill: '',
 });
 
 let lastRequestResult = null;
+
+/**
+ * Returns the extension path used by SillyTavern's template loader.
+ * Link installs use the repository name as the folder name, while manual
+ * installs may use a custom name, so the path must be derived at runtime.
+ * @returns {string}
+ */
+function getModulePath() {
+    const scriptUrl = new URL(import.meta.url);
+    const extensionRoot = '/scripts/extensions/';
+    const rootIndex = scriptUrl.pathname.lastIndexOf(extensionRoot);
+
+    if (rootIndex === -1) {
+        throw new Error('Unable to determine the DeepSeek Thinking Prefill extension path.');
+    }
+
+    const encodedPath = scriptUrl.pathname.slice(rootIndex + extensionRoot.length);
+    const modulePath = encodedPath.split('/').slice(0, -1).join('/');
+    return decodeURIComponent(modulePath);
+}
 
 function loadSettings() {
     const savedSettings = extension_settings[MODULE_NAME];
@@ -176,7 +195,7 @@ export async function init() {
     loadSettings();
 
     if (!document.getElementById('deepseek-thinking-prefill-settings')) {
-        const settingsHtml = await renderExtensionTemplateAsync(MODULE_PATH, 'settings');
+        const settingsHtml = await renderExtensionTemplateAsync(getModulePath(), 'settings');
         document.getElementById('extensions_settings2')?.insertAdjacentHTML('beforeend', settingsHtml);
     }
 

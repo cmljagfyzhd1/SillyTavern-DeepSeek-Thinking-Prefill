@@ -25,6 +25,8 @@ https://github.com/cmljagfyzhd1/SillyTavern-DeepSeek-Thinking-Prefill
 
 Reload SillyTavern, then open **Extensions → DeepSeek Thinking Prefill** and enter the desired prefill.
 
+If a previous installation does not load, remove it from SillyTavern's extension manager, restart SillyTavern, and install it again with the URL above.
+
 ## Scope
 
 The extension only modifies requests that meet all of these conditions:
